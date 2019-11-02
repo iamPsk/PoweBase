@@ -1,0 +1,22 @@
+section {
+  padding: 16px;
+  position: relative;
+}
+
+h2 {
+  color: #121212;
+  text-align: right;
+  width: 60%;
+  margin: auto;
+  margin-bottom: .5em;
+}
+
+h2 i {
+  color: #2d8cff;
+  padding-right: 8px;
+  font-size: 1.2em;
+}
+
+.iGroup:nth-child(4) {
+  margin-bottom: 0;
+}

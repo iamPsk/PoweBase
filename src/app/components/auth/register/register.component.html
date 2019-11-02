@@ -1,0 +1,72 @@
+<section>
+  <div class="loading" *ngIf="regProc"></div>
+  <div class="alert-danger" *ngIf="!regProc && regErr">
+    <div>
+      <span>&#9888;</span>
+      <p>{{ regErr }}</p>
+    </div>
+  </div>
+  <h2>
+    <i class="fa fa-key"></i>Register
+  </h2>
+  <form #form="ngForm" (ngSubmit)="register();">
+    <div class="iError" *ngIf="username.invalid && (username.touched || username.dirty)">
+      <div *ngIf="username.errors.required">
+        ! username is required
+      </div>
+      <div *ngIf="username.errors.minlength">
+        ! username is too short
+      </div>
+    </div>
+    <div class="iGroup" [class.iGroupErr]="username.invalid && (username.touched || username.dirty)">
+      <label for="username">
+        <i class="fa fa-user"></i>
+      </label>
+      <input type="text" #username="ngModel" [(ngModel)]="user.username" placeholder="Your username" name="username"
+        id="username" minlength="3" required>
+    </div>
+    <div class="iError" *ngIf="email.invalid && (email.touched || email.dirty)">
+      <div *ngIf="email.errors.required">
+        ! Email is required
+      </div>
+      <div *ngIf="email.errors.pattern">
+        ! Email is not valid
+      </div>
+    </div>
+    <div class="iGroup" [class.iGroupErr]="email.invalid && (email.touched || email.dirty)">
+      <label for="email">
+        <i class="fa fa-envelope"></i>
+      </label>
+      <input type="email" #email="ngModel" [(ngModel)]="user.email" placeholder="Your login email" name="email"
+        id="email" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required>
+    </div>
+    <div class="iError" *ngIf="password.invalid && (password.touched || password.dirty)">
+      <div *ngIf="password.errors.required">
+        ! password is required
+      </div>
+      <div *ngIf="password.errors.minlength">
+        ! password is too short
+      </div>
+    </div>
+    <div class="iError" *ngIf="password2.invalid && (password2.touched || password2.dirty)">
+      <div *ngIf="password2.errors.pattern">
+        password dont match
+      </div>
+    </div>
+    <div class="iGroup" [class.iGroupErr]="password.invalid && (password.touched || password.dirty)">
+      <label for="password">
+        <i class="fa fa-lock"></i>
+      </label>
+      <input type="password" #password="ngModel" [(ngModel)]="user.password" name="password" placeholder="Password"
+        id="password" minlength="6" required>
+    </div>
+    <div class="iGroup" [class.iGroupErr]="password2.invalid && (password2.touched || password2.dirty)">
+      <label for="password2">
+        <i class="fa fa-lock"></i>
+      </label>
+      <input type="password" #password2="ngModel" [(ngModel)]="user.password2" name="password2" placeholder="Password2"
+        id="password2" [pattern]="password.value" required>
+    </div>
+    <input type="submit" [disabled]="form.invalid" value="Register">
+  </form>
+</section>

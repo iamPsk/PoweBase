@@ -1,0 +1,121 @@
+section{
+  position: relative;
+  padding: 1em;
+  color: #39394b;
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+
+form{
+  transition: right 400ms ease-in;
+  position: absolute;
+  z-index: 1;
+  box-shadow: 1px 2px 5px #ccc;
+  border: none;
+  border-radius: unset;
+  max-width: 222px;
+  flex-direction: row;
+  right: -189.281px;
+  margin: 0;
+  top: 0;
+  padding: 0;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+form:hover{
+  /* border: none; */
+}
+
+form > i{
+  
+  padding: 3px 8px;
+  font-size: 1.5em;
+  background: rgb(255, 255, 255);
+  color: #ff7200;
+}
+
+form > i:hover {
+  color: #00a07b;
+}
+
+
+input{
+  transition: border-color 200ms ease;
+  border-width: thin;
+  border-style: solid;
+  border-color: #90caf9;
+  padding: 4px;
+  padding-left: 8px;
+  box-shadow: none;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  outline: none;
+}
+
+input:focus{
+
+  border-color: #1976d2;
+}
+
+header{
+  display: flex;
+  align-items: baseline;
+  justify-content: space-around;
+  margin-bottom: 1em;
+}
+
+h1{
+  font-size: 2em;
+}
+header p{
+  font-size: 1.5em;
+}
+header p > span{
+  letter-spacing: 1px;
+  font-weight: bolder;
+  color: #ee3d3d;
+}
+
+table,tr{
+  border: 1px solid #000;
+}
+tbody tr:nth-child(even){
+  background-color: #f1f1f1;
+}
+tbody tr:hover{
+  background-color: #272727;
+  color: #fff;
+}
+#table{
+  border: 1px solid #f00;
+  max-width: 800px;
+  margin: 0 auto 1em;
+}
+
+table{
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th{
+  padding: 8px 0;
+  font-size: 16px;
+}
+td{
+  text-align: center;
+  padding: 4px 0;
+}
+
+section > p{
+  font-weight: 400;
+  color: #00ff55;
+  font-size: 1.5em;
+  display: flex;
+  justify-content: space-around;
+  outline: none;
+}
+
+.show{
+  display: none;
+}

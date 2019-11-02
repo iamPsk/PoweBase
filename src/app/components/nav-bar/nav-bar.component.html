@@ -1,0 +1,20 @@
+<nav>
+  <div id="nav-header">
+    <a id="nav-brand" href=""><i class="fa fa-home"></i> PowerBase</a>
+    <button id="toggler" (click)="toggleNav()"><i class="fa fa-bars"></i></button>
+  </div>
+  <div id="collapse">
+    <div id="left">
+      <a *ngIf="client" routerLink="./Clients">Clients</a>
+      <a *ngIf="client" href="">New loan</a>
+    </div>
+    <div id="right">
+      <a *ngIf="!client" routerLink="/register">Register</a>
+      <a *ngIf="!client" routerLink="/login">Login</a>
+      <button *ngIf="client" (click)="logout()" id="logout">Logout</button>
+    </div>
+  </div>
+
+</nav>
+<br>
+<!-- {{homeLink}} -->

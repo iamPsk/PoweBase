@@ -1,0 +1,19 @@
+button{
+  transition: all 200ms linear;
+  color: #ff7200;
+  margin-top: .8em;
+  margin-left: 2em;
+  padding: 0;
+  background: unset;
+  border: none;
+  outline: none;
+  margin-bottom: 0;font-size: 1.5em;
+}
+
+button:hover{
+  color: #cf5d00;
+}
+
+button:active{
+  color: #fff
+}

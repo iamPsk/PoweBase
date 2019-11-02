@@ -1,0 +1,99 @@
+.container{
+  padding: 1em;
+}
+header{
+  color: #424242;
+  font-family: "Roboto-Bold";
+  margin-bottom: 1em;
+}
+
+h1{
+  font-size: 2.5em;
+  /* background: #ff0101; */
+  display: flex;
+  justify-content: space-around;
+}
+
+span{
+  /* position: relative; */
+  /* border: 1px solid #000; */
+}
+header a{
+  font-size: .8em;
+  text-transform: capitalize;
+  /* color: #666; */
+  position: relative;
+  color: inherit;
+  text-decoration: none;
+}
+
+header a:hover{
+  color: rgb(32, 148, 243);
+}
+
+header a:hover i{
+  opacity: 1;
+}
+
+h1 i{
+  transition: opacity 400ms ease;
+  opacity: 0;
+  color: #2196f3;
+  font-size: 18px;
+  position: absolute;
+  bottom: 21px;
+  right: -16px
+}
+
+section{
+  margin-bottom: 1em;
+  background-color: #f1f1f1;
+  /* border: 1px solid #000; */
+  display: flex;
+  flex-wrap: wrap;
+}
+.col{
+  box-shadow: 0 2px 5px gray;
+  border-radius: 3px;
+  transition: background-color 200ms ease-in;
+  background-color: #272727;
+  margin: 4px 2px;
+  display: flex;
+  flex-direction: column;
+  flex: auto;
+  border-width: thin;
+  border-style: solid;
+  border-color: #272727;
+}
+
+.col:hover{
+  background: #212121;
+  box-shadow: 0 1px 1px 1px #2196f3;
+}
+
+.col a{
+  align-self: center;
+}
+.col i{
+  transition: color 200ms ease-in;
+  color: #2196f3;
+  padding: 1em 0;
+  font-size: 7em;
+}
+
+.col h2{
+  font-weight: 300;
+  font-size: 12px;
+  transition: background-color 200ms ease-in;
+  color: #ccc;
+  padding-left: 8px;
+  padding-bottom: 8px;
+}
+
+.col:hover h2{
+  color: #fff;
+}
+
+.col:hover i {
+  color: #42a5f5;
+}

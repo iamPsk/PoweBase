@@ -1,0 +1,59 @@
+<section>
+  <div class="loading" *ngIf="logging"></div>
+  <div class="alert-danger" *ngIf="!logging && loginErr">
+    <div>
+      <span><i class="fa fa-info-circle"></i></span>
+      <p>{{ loginErr }}</p>
+    </div>
+  </div>
+  <div class="alert-danger" *ngIf="unAuth">
+    <div>
+      <span><i class="fa fa-info-circle"></i></span>
+      <p>You are not authorized, login to continue</p>
+    </div>
+  </div>
+  <div class="alert-success" *ngIf="loggedOut">
+    <div>
+      <span><i class="fa fa-check-circle"></i></span>
+      <p>You have successfully logged of PowerBase</p>
+    </div>
+  </div>
+
+
+  <h2>
+    <i class="fa fa-lock"></i>Login
+  </h2>
+  <form #form="ngForm" (ngSubmit)="login();">
+    <div class="iError" *ngIf="email.invalid && (email.touched || email.dirty)">
+      <div *ngIf="email.errors.required">
+        ! Email is required
+      </div>
+      <div *ngIf="email.errors.pattern">
+        ! Email is not valid
+      </div>
+    </div>
+    <div class="iGroup" [class.iGroupErr]="email.invalid && (email.touched || email.dirty)">
+      <label for="email">
+        <i class="fa fa-envelope"></i>
+      </label>
+      <input type="email" #email="ngModel" [(ngModel)]="user.email" placeholder="Your login email" name="email"
+        id="email" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required>
+    </div>
+    <div class="iGroup" [class.iGroupErr]="password.invalid && (password.touched || password.dirty)">
+      <label for="password">
+        <i class="fa fa-lock"></i>
+      </label>
+      <input type="password" #password="ngModel" [(ngModel)]="user.password" name="password" placeholder="Password"
+        id="password" minlength="6" required>
+    </div>
+    <div id="last" [hidden]="!loginErr">
+      <p>
+        no accont ? <span>
+          <a routerLink="/register">Signup</a>
+        </span>
+      </p>
+    </div>
+    <input type="submit" [disabled]="form.invalid" value="Login">
+  </form>
+</section>
+
